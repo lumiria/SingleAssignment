@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>lumiria</Authors>
+    <Description>Provides an object that can be assigned only once.</Description>
+    <PackageTags>signle assignment, once</PackageTags>
+    <Copyright>© 2020 lumiria</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/lumiria/SingleAssignment</PackageProjectUrl>
+  </PropertyGroup>
+
+</Project>
