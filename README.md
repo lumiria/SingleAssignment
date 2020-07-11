@@ -31,7 +31,7 @@ The value cannot be overwirtten.
 ```csharp
 if (!once.TrySet(newValue))
 {
-    Console.WriteLine($"Cannot overwrite : {(T)once}");
+    Console.WriteLine($"Cannot overwrite : {(string)once}");
 }
 
 try
