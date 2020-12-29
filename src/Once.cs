@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace SignleAssignment
 {
@@ -13,8 +14,9 @@ namespace SignleAssignment
         /// <summary>
         /// Initializes a new instance of the <see cref="Once"/> class.
         /// </summary>
-        internal Once()
+        public Once()
         {
+            //Required for JsonSerializer.
         }
 
         /// <summary>
@@ -29,6 +31,7 @@ namespace SignleAssignment
         /// <summary>
         /// Gets a value indicating whether the current <see cref="Once{T}"/> object has a value.
         /// </summary>
+        [JsonIgnore]
         public bool HasValue { get; private set; }
 
         /// <summary>
