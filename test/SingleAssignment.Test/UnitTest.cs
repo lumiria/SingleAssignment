@@ -62,6 +62,19 @@ namespace SingleAssignment.Test
         }
 
         [Fact]
+        public void GetOrDefaultTest()
+        {
+            var once = Once.Create<int>();
+
+            Assert.Equal(10, once.GetOrDefault(() => 10));
+            Assert.False(once.HasValue);
+
+            once.Value = 20;
+            Assert.Equal(20, once.GetOrDefault(() => 10));
+            Assert.True(once.HasValue);
+        }
+
+        [Fact]
         public void SerializeTest()
         {
             var once = Once.Create(10);

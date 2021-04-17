@@ -25,7 +25,7 @@ namespace SignleAssignment.Extensions
         /// Sets a value by using the specified function if the value does not already exist. Returns the new value, or the existing value if the value exists.
         /// </summary>
         /// <typeparam name="T">The type of value.</typeparam>
-        /// <param name="setter">The function of the value to add.</param>
+        /// <param name="valueFactory">The function of the value to add.</param>
         /// <returns>The value. This will be either the existing value if the value is already, or the new value if the value was not in myself.</returns>
         public static T GetOrSet<T>(this Once<T> self, Func<T> valueFactory)
         {
@@ -36,5 +36,16 @@ namespace SignleAssignment.Extensions
             self.TrySet(valueFactory());
             return self;
         }
+
+        /// <summary>
+        /// Gets a value by using the specified function if the value dows not alreay exist. otherwise the set value is returned.
+        /// </summary>
+        /// <typeparam name="T">The type of value.</typeparam>
+        /// <param name="defualtFactory">The function to generate default value.</param>
+        /// <returns>The value. This will be either the existing value if the value is alreay, otherwise a value by using the defaultFactory function.</returns>
+        public static T GetOrDefault<T>(this Once<T> self, Func<T> defualtFactory) =>
+            self.HasValue
+                ? self
+                : defualtFactory();
     }
 }
