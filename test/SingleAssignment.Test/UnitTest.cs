@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json;
 using SignleAssignment;
 using SignleAssignment.Extensions;
@@ -85,6 +86,25 @@ namespace SingleAssignment.Test
             var obj = JsonSerializer.Deserialize<Once<int>>(json);
             Assert.True(obj.HasValue);
             Assert.Equal(10, obj);
+        }
+
+        [Fact]
+        public void ReuseTest()
+        {
+            var now = DateTime.Now;
+            var once = ReusableOnce.Create(now);
+
+            Assert.Equal(now, once);
+            Assert.True(once.HasValue);
+
+            once.Dispose();
+            Assert.False(once.HasValue);
+
+            now = DateTime.Now + new TimeSpan(1, 0, 0);
+            once.Value = now;
+
+            Assert.Equal(now, once);
+            Assert.True(once.HasValue);
         }
     }
 }

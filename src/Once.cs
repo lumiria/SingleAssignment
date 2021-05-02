@@ -84,7 +84,7 @@ namespace SignleAssignment
         /// <typeparam name="T">The underlying value type of the <see cref="Once{T}"/> generic type.</typeparam>
         /// <returns></returns>
         public static Once<T> Create<T>() =>
-            new Once<T>();
+            new ();
 
         /// <summary>
         /// Creates a new <see cref="Once{T}"/> object initialized to a specified value.
@@ -93,6 +93,6 @@ namespace SignleAssignment
         /// <param name="value">A value.</param>
         /// <returns>A <see cref="Once{T}"/> object whose <see cref="Value"/> property is assigned with the value parameter.</returns>
         public static Once<T> Create<T>(T value) =>
-            new Once<T>(value);
+            new (value);
     }
 }

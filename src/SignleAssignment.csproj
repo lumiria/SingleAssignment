@@ -6,13 +6,13 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>lumiria</Authors>
     <Description>Provides an object that can be assigned only once.</Description>
-    <PackageTags>signle assignment, once</PackageTags>
+    <PackageTags>signle-assignment, once</PackageTags>
     <Copyright>© 2020 lumiria</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/lumiria/SingleAssignment</PackageProjectUrl>
-    <Version>1.2.0</Version>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
+    <Version>1.3.0</Version>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
